@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import '../controllers/homepage_controller.dart';
 
 class HomePageView extends StatelessWidget {
+  const HomePageView({super.key});
+
   @override
   Widget build(BuildContext context) {
     final HomePageController controller = Get.find<HomePageController>();
@@ -13,7 +15,7 @@ class HomePageView extends StatelessWidget {
             Builder(
               builder: (BuildContext context) {
                 return Padding(
-                  padding: EdgeInsets.only(right: 30, top: 20),
+                  padding: const EdgeInsets.only(right: 30, top: 20),
                   child: IconButton(
                     onPressed: () {
                       Scaffold.of(context).openEndDrawer();
@@ -28,7 +30,7 @@ class HomePageView extends StatelessWidget {
         endDrawer: Drawer(child:ListView(
             padding: EdgeInsets.zero,
             children: <Widget>[
-              DrawerHeader(
+              const DrawerHeader(
                 decoration: BoxDecoration(
                   color: Colors.white,
                 ),
@@ -56,7 +58,7 @@ class HomePageView extends StatelessWidget {
               ListView.builder(
                 shrinkWrap: true,
                 physics:
-                    NeverScrollableScrollPhysics(), // To prevent scrolling inside the drawer
+                    const NeverScrollableScrollPhysics(), 
                 itemCount: controller.drawerList.length,
                 itemBuilder: (context, index) {
                   final item = controller.drawerList[index];
@@ -65,7 +67,7 @@ class HomePageView extends StatelessWidget {
                       ListTile(
                         title: Text(
                           item['title'] ?? '',
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontFamily: 'AlegreyaSans',
                             fontWeight: FontWeight.w500,
                             fontSize: 18,
@@ -126,7 +128,7 @@ class HomePageView extends StatelessWidget {
           }
           return SingleChildScrollView(
               child: Padding(
-                  padding: EdgeInsets.only(left: 30, right: 30),
+                  padding: const EdgeInsets.only(left: 30, right: 30),
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -178,7 +180,7 @@ class HomePageView extends StatelessWidget {
                                 height: 170,
                                 padding: const EdgeInsets.all(30),
                                 decoration: BoxDecoration(
-                                  color: Color(0xffF5B5CF),
+                                  color: const Color(0xffF5B5CF),
                                   borderRadius: BorderRadius.circular(10),
                                 ),
                                 child: Row(
@@ -191,7 +193,7 @@ class HomePageView extends StatelessWidget {
                                         children: [
                                           const Padding(
                                             padding: EdgeInsets.only(top: 20),
-                                            child: const Text(
+                                            child: Text(
                                               'Nanny And\nBabysitting Services',
                                               style: TextStyle(
                                                 fontSize: 18,
@@ -209,7 +211,7 @@ class HomePageView extends StatelessWidget {
                                               onPressed: () {},
                                               style: ElevatedButton.styleFrom(
                                                 backgroundColor:
-                                                    Color(0xff262F71),
+                                                    const Color(0xff262F71),
                                               ),
                                               child: const Text(
                                                 'Book Now',
@@ -292,7 +294,7 @@ class HomePageView extends StatelessWidget {
                                         child: ElevatedButton(
                                           onPressed: () {},
                                           style: ElevatedButton.styleFrom(
-                                            backgroundColor: Color(0xffE36DA6),
+                                            backgroundColor: const Color(0xffE36DA6),
                                           ),
                                           child: const Text(
                                             'Start',
@@ -350,7 +352,7 @@ class HomePageView extends StatelessWidget {
                                         children: [
                                           Image.asset(
                                             'assets/calendar.png',
-                                            color: Color(0xffE36DA6),
+                                            color: const Color(0xffE36DA6),
                                             height: 13,
                                             width: 13,
                                             fit: BoxFit.cover,
@@ -372,7 +374,7 @@ class HomePageView extends StatelessWidget {
                                         children: [
                                           Image.asset(
                                             'assets/calendar.png',
-                                            color: Color(0xffE36DA6),
+                                            color: const Color(0xffE36DA6),
                                             height: 13,
                                             width: 13,
                                             fit: BoxFit.cover,
@@ -398,7 +400,7 @@ class HomePageView extends StatelessWidget {
                                         children: [
                                           Image.asset(
                                             'assets/clock.png',
-                                            color: Color(0xffE36DA6),
+                                            color: const Color(0xffE36DA6),
                                             height: 13,
                                             width: 13,
                                             fit: BoxFit.cover,
@@ -420,7 +422,7 @@ class HomePageView extends StatelessWidget {
                                         children: [
                                           Image.asset(
                                             'assets/clock.png',
-                                            color: Color(0xffE36DA6),
+                                            color: const Color(0xffE36DA6),
                                             height: 13,
                                             width: 13,
                                             fit: BoxFit.cover,
@@ -449,7 +451,7 @@ class HomePageView extends StatelessWidget {
                                             onPressed: () {},
                                             style: ElevatedButton.styleFrom(
                                               backgroundColor:
-                                                  Color(0xff262F71),
+                                                  const Color(0xff262F71),
                                               shape: RoundedRectangleBorder(
                                                   borderRadius:
                                                       BorderRadius.circular(
@@ -483,7 +485,7 @@ class HomePageView extends StatelessWidget {
                                             onPressed: () {},
                                             style: ElevatedButton.styleFrom(
                                               backgroundColor:
-                                                  Color(0xff262F71),
+                                                  const Color(0xff262F71),
                                               shape: RoundedRectangleBorder(
                                                   borderRadius:
                                                       BorderRadius.circular(
@@ -517,7 +519,7 @@ class HomePageView extends StatelessWidget {
                                             onPressed: () {},
                                             style: ElevatedButton.styleFrom(
                                               backgroundColor:
-                                                  Color(0xff262F71),
+                                                  const Color(0xff262F71),
                                               shape: RoundedRectangleBorder(
                                                   borderRadius:
                                                       BorderRadius.circular(
@@ -562,7 +564,7 @@ class HomePageView extends StatelessWidget {
                         ),
                         ListView.builder(
                           shrinkWrap: true,
-                          physics: NeverScrollableScrollPhysics(),
+                          physics: const NeverScrollableScrollPhysics(),
                           itemCount: controller.packagesList.length,
                           itemBuilder: (context, index) {
                             var package = controller.packagesList[index];
@@ -576,7 +578,7 @@ class HomePageView extends StatelessWidget {
                                 child: Column(
                                   children: [
                                     Padding(
-                                      padding: EdgeInsets.all(12),
+                                      padding: const EdgeInsets.all(12),
                                       child: Row(
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
@@ -589,7 +591,7 @@ class HomePageView extends StatelessWidget {
                                               onPressed: () {},
                                               style: ElevatedButton.styleFrom(
                                                 backgroundColor:
-                                                    Color(0xffE36DA6),
+                                                    const Color(0xffE36DA6),
                                               ),
                                               child: const Text(
                                                 'Book Now',
@@ -606,7 +608,7 @@ class HomePageView extends StatelessWidget {
                                       ),
                                     ),
                                     Padding(
-                                        padding: EdgeInsets.only(
+                                        padding: const EdgeInsets.only(
                                             left: 12, right: 12),
                                         child: Row(
                                           mainAxisAlignment:
